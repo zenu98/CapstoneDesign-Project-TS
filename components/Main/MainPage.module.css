@@ -1,0 +1,139 @@
+#wrap {
+  overflow: hidden;
+  min-width: 1500px;
+  background-color: black;
+}
+
+.section_container {
+  position: relative;
+  margin: 0 auto;
+}
+
+.abcd {
+  width: 97.5%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.logo_container {
+  position: relative;
+  height: 180px;
+  width: 97.5%;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 10;
+}
+.logo_contents {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+}
+.logo_contents span {
+  text-align: center;
+  margin-bottom: 5px;
+  width: 200px;
+}
+.logo_image {
+  position: relative !important;
+  width: 100px !important;
+  height: 80px !important;
+  margin-bottom: 10px;
+}
+
+.main_contents {
+  position: relative;
+  display: flex;
+  width: 97.5%;
+  margin: 0 auto;
+
+  justify-content: space-around;
+  height: calc(100vh - 6rem - 200px);
+  background-color: white;
+}
+
+.main_contents_image {
+  position: relative;
+  overflow: hidden;
+  width: 31%;
+  height: 470px;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.main_contents div:nth-child(1) {
+  animation: fade-in 1s ease-in forwards;
+}
+.main_contents div:nth-child(2) {
+  animation: fade-in 2.3s ease-in forwards;
+}
+.main_contents div:nth-child(3) {
+  animation: fade-in 3.6s ease-in forwards;
+}
+.main_contents div div span:nth-child(1) {
+  margin-top: 5px;
+}
+.slide_layer_off {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 1);
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+}
+.slide_layer_on {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  transition: 0.4s ease;
+}
+
+.layer_span {
+  overflow: hidden;
+  text-decoration: none;
+  margin-left: 60px;
+  font-family: "SCfont";
+  font-size: 70px;
+  color: black;
+}
+
+.main_image {
+  object-fit: cover;
+}
+
+.main_image_mouseout {
+  transition: 0.5s;
+}
+.main_image_mouseover {
+  transition: 0.5s;
+  transform: translateY(-30%);
+  opacity: 0.7;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: "SCfont";
+  src: url("/fonts/good-head-sc-office-pro-extd-bold.woff") format("woff");
+}

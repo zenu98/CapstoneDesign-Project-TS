@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  scroll-behavior: smooth; /* 스크롤 부드럽게 하기 */
+  font-family: "NanumSquare", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 10px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+  height: 40%; /* 스크롤바의 길이 */
+  background: #c4c6c8; /* 스크롤바의 색상 */
+  border-radius: 10px; /* 테두리 둥글게 만들기 속성 */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(233, 236, 239); /*스크롤바 뒷 배경 색상*/
+}

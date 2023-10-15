@@ -1,0 +1,60 @@
+.header {
+  height: 6rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  top: 0px;
+  width: 100%;
+  z-index: 5;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  margin: 0 var(--size-4);
+}
+
+/* .header a:hover {
+  color: var(--color-grey-200);
+} */
+
+.logo_image {
+  margin-top: 30px;
+  margin-left: 5px;
+  width: 130px;
+  height: 90px;
+  position: relative !important;
+}
+.link_style {
+  text-decoration: none;
+  margin-right: 30px;
+  font-family: "FSMeridian";
+  font-size: 20px;
+}
+.link_style:hover {
+  color: gray;
+}
+.black {
+  color: black;
+}
+.hotpink {
+  color: rgb(221, 36, 67);
+}
+@media (min-width: 768px) {
+  .header ul {
+    gap: 0.5rem;
+  }
+}
+
+@font-face {
+  font-family: "FSMeridian";
+  src: url("/fonts/FSMeridianTrial-Bold.woff") format("woff");
+}
