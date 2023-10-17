@@ -4,12 +4,69 @@ import classes from "../Detail.module.css";
 import styles from "./DetailC1.module.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 import Footer from "./layout/Footer";
 
 const DetailC1 = (props) => {
+  const { post } = props;
+  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+  console.log("렌더링");
+  const customRenderers = {
+    p(paragraph) {
+      const { node } = paragraph;
+      const images = node.children.filter((child) => child.tagName === "img");
+
+      if (images.length > 0) {
+        return (
+          <div>
+            {images.map((image, index) => {
+              const imageName = image.properties.src;
+              const imageAlt = image.properties.alt;
+              let isBadge = false;
+              let imageWidth = 1919;
+              let imageHeight = 983;
+
+              if (imageName.includes("badge")) {
+                imageHeight = 100;
+                imageWidth = 300;
+                isBadge = true;
+              }
+
+              return (
+                <div key={index} className={classes.image}>
+                  <Image
+                    src={`/images/posts/${post.slug}/${imageName}`}
+                    alt={imageAlt}
+                    width={imageWidth}
+                    height={imageHeight}
+                    layout={isBadge ? "intrinsic" : "responsive"}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        );
+      }
+
+      return <p>{paragraph.children}</p>;
+    },
+
+    // code(code) {
+    //   const { className, children } = code;
+    //   const language = className.split("-")[1]; // language-js에서 js부분을 추출하는 부분
+    //   return (
+    //     <SyntaxHighlighter
+    //       style={atomDark}
+    //       language={language}
+    //       children={children}
+    //     />
+    //   );
+    // },
+  };
+
   const pos = props.pos;
-  const loadedClient = props.loadedClient;
+
   const [isClicked, setIsClicked] = useState(false);
   const linkClickHandler = () => {
     setIsClicked((prev) => !prev);
@@ -20,8 +77,8 @@ const DetailC1 = (props) => {
       <div className={classes.background}>
         <Image
           className={classes.mainimag}
-          src={`${loadedClient.contents[0]}`}
-          alt="dummy"
+          src={imagePath}
+          alt="main"
           fill
           style={{ transform: `translateY(${pos / 2}px)` }}
         />
@@ -75,23 +132,11 @@ const DetailC1 = (props) => {
             </p>
           </div>
         </div>
-        <div className={styles.gifContainer}>
-          {loadedClient.gif.map((item) => (
-            <div key={item}>
-              <Image src={item} alt="gif" width={50} height={50} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className={`${styles["introBox-right"]}`}>
-        <p className={styles.introText}>
-          Habibi is an ever-growing art project within Web3, started by the one
-          and only Mark The Habibi. This all began with one word, Habibi. Habibi
-          means so many things. It’s a word exchanged between passionate lovers,
-          and it’s a word exchanged between caring friends. Simply put, it means
-          “dearest” or “darling”. But that’s really selling it short.
-        </p>
+        <article className={classes.content}>
+          <ReactMarkdown components={customRenderers}>
+            {post.content}
+          </ReactMarkdown>
+        </article>
       </div>
 
       <Footer />
