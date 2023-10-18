@@ -1,7 +1,20 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   scroll-behavior: smooth; /* 스크롤 부드럽게 하기 */
   font-family: "NanumSquare", sans-serif;
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 0.75rem;
+  --size-4: 1rem;
+  --size-5: 1.25rem;
+  --size-6: 1.5rem;
+  --size-8: 2rem;
+  --size-16: 4rem;
+  --size-20: 5rem;
+  --size-40: 10rem;
 }
 ::-webkit-scrollbar {
   width: 10px; /* 스크롤바의 너비 */

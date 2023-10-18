@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "./logo";
-import classes from "./main-navigaion.module.css";
+import classes from "./main-navigaion.module.scss";
 import { useEffect, useState, useRef, useMemo } from "react";
 import { throttle } from "lodash";
 import Image from "next/image";

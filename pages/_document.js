@@ -4,14 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <link
-            href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"
-            rel="stylesheet"
-            type="text/css"
-          />
-        </Head>
-
+        <Head />
         <body>
           <Main />
           <NextScript />

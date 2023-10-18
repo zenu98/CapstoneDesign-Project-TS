@@ -1,33 +1,31 @@
-.header {
+@mixin header-styles {
+  width: 100%;
   height: 4rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
+  transition: all 500ms ease;
   z-index: 5;
   border-bottom: 1px solid black;
-}
-.header_down {
   position: fixed;
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.header {
+  @include header-styles;
+  top: 0;
+}
+
+.header_down {
+  @include header-styles;
   top: -6rem;
-}
-
-.header ul {
-  list-style: none;
-  display: flex;
-  align-items: baseline;
-  margin: 0;
-  padding: 0;
-}
-
-.header li {
-  margin: 0 var(--size-4);
+  opacity: 0;
 }
 
 .logo_image {
@@ -51,11 +49,6 @@
 }
 .hotpink {
   color: rgb(221, 36, 67);
-}
-@media (min-width: 768px) {
-  .header ul {
-    gap: 0.5rem;
-  }
 }
 
 @font-face {

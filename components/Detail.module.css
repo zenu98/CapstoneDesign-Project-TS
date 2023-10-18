@@ -3,6 +3,8 @@
   position: relative;
   padding: 0 0.938rem;
   margin-top: -32px;
+  width: 95%;
+  max-width: 90rem;
 }
 
 .introBox-right {
