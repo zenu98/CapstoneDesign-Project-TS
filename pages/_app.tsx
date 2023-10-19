@@ -2,7 +2,6 @@ import { AppProps } from "next/app";
 import { Fragment } from "react";
 import "../styles/globals.css";
 import Head from "next/head";
-import Layout from "../components/UI/layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

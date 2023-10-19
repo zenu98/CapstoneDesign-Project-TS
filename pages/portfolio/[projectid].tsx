@@ -1,40 +1,31 @@
-import Detail from "../../components/Detail";
-import path from "path";
-import fs from "fs/promises";
+import Post from "../../components/pages/post";
 import Head from "next/head";
-
 import Layout from "../../components/UI/layout/Layout";
 import { GetStaticProps } from "next";
-import { getPostData, getPostsFiles } from "../../lib/posts-util";
+import { getPostData, getPostsFiles, getDB } from "../../lib/posts-util";
+
 const SelectedPortpoiloPage = (props) => {
+  const { post, db } = props;
   return (
     <Layout>
       <Head>
         <title>SKHU Capstone Design-</title>
         <meta name="description" />
       </Head>
-      <Detail post={props.post} />
+      <Post post={post} db={db} />
     </Layout>
   );
 };
 
-// async function getData() {
-//   const filePath = path.join(process.cwd(), "data", "dummy-data.json");
-//   const jsonData = await fs.readFile(filePath, "utf-8");
-//   const data = JSON.parse(jsonData);
-
-//   return data;
-// }
-
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
   const { projectid } = params;
-
   const postData = getPostData(projectid);
-
+  const dbData = await getDB(projectid);
   return {
     props: {
       post: postData,
+      db: dbData,
     },
   };
 };

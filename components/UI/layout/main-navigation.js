@@ -67,12 +67,12 @@ const MainNavigation = () => {
             <Link
               href="/portfolio/c1"
               className={`${classes.link_style} ${
-                router.asPath === "/portfolio/c1"
+                router.asPath === "/portfolio/pokemon-type-cal"
                   ? classes.hotpink
                   : classes.black
               }`}
             >
-              KaYoung
+              Pokemon
             </Link>
           </li>
           <li>

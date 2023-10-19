@@ -1,19 +1,33 @@
-import classes from "./DetailC1.module.scss";
+import classes from "./post_content.module.scss";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-import Footer from "./layout/Footer";
+import Footer from "../UI/layout/Footer";
 
-const DetailC1 = (props) => {
-  const { post } = props;
-  const { description } = post;
+const PostContent = (props) => {
+  const { post, db } = props;
+  console.log(db);
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
   const pos = props.pos;
   const [isClicked, setIsClicked] = useState(false);
   const linkClickHandler = () => {
     setIsClicked((prev) => !prev);
   };
+
+  const frontTech = db.front;
+  const backTech = db.back;
+  const frontTechList = frontTech.map((item, index) => (
+    <li key={index}>
+      <span>{item}</span>
+    </li>
+  ));
+  const backTechList = backTech.map((item, index) => (
+    <li key={index}>
+      <span>{item}</span>
+    </li>
+  ));
+
   const customRenderers = {
     p(paragraph) {
       const { node } = paragraph;
@@ -71,11 +85,11 @@ const DetailC1 = (props) => {
     <>
       <div className={classes.front_image}>
         <Image
+          className={classes.front_image_content}
           src={imagePath}
           alt="main"
           width={1919}
           height={983}
-          layout="responsive"
           style={{ transform: `translateY(${pos / 2}px)` }}
         />
       </div>
@@ -85,29 +99,14 @@ const DetailC1 = (props) => {
       >
         <header className={classes.header}>
           <h1>
-            KaYoung,
-            <span> Capstone design team-project of SKHU</span>
+            {db.title}, <span>{db.excerpt}</span>
           </h1>
           <div className={classes.header_contents_container}>
             <div className={classes.header_contents}>
               <h2>Front</h2>
-              <ul>
-                <li>
-                  <span>Adobe Premiere Pro</span>
-                </li>
-                <li>
-                  <span>FlipaClip</span>
-                </li>
-              </ul>
+              <ul>{frontTechList}</ul>
               <h2>Back</h2>
-              <ul>
-                <li>
-                  <span>Adobe Premiere Pro</span>
-                </li>
-                <li>
-                  <span>FlipaClip</span>
-                </li>
-              </ul>
+              <ul>{backTechList}</ul>
 
               {isClicked ? (
                 <div onClick={linkClickHandler}>
@@ -127,14 +126,12 @@ const DetailC1 = (props) => {
             </div>
             <div className={classes.header_contents}>
               <div className={classes.header_contents_p}>
-                <p>
-                  dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                </p>
+                <p>{db.description}</p>
               </div>
             </div>
           </div>
         </header>
-        <article className={classes.content}>
+        <article className={classes.article}>
           <ReactMarkdown components={customRenderers}>
             {post.content}
           </ReactMarkdown>
@@ -146,4 +143,4 @@ const DetailC1 = (props) => {
   );
 };
 
-export default DetailC1;
+export default PostContent;

@@ -43,7 +43,7 @@ const MainPage = () => {
               }, 100);
             }}
           >
-            <Link href="/portfolio/c1">
+            <Link href="/portfolio/pokemon-type-cal">
               <Image
                 fill
                 className={`${classes.main_image} ${

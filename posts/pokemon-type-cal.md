@@ -1,9 +1,5 @@
 ---
-title: "포켓몬스터 타입 계산기"
-excerpt: "두번째 토이 프로젝트 제작"
-date: "2023-03"
 image: pokemon.png
-isFeatured: true
 ---
 
 ## 포켓몬스터 속성 계산기
@@ -15,20 +11,6 @@ isFeatured: true
 - 개발기간: 2023.02 ~ 2023.03
 - 포켓몬스터라는 게임은 다양한 속성들을 가진 포켓몬이 있고 각 속성마다 다른 속성과 상성관계가 잡혀있다.
 - 위 표와 같은 상성관계를 계산할 수 있는 기능을 한눈에 보여지도록 하며, 내가 머릿속에서 구상하고 있는 디자인을 적용한 웹페이지를 제작하였다.
-
-## 기술 스택
-
-### ✔️Frond-end
-
-![Badge-HTML](../badges/badge-html.svg)
-![Badge-CSS](../badges/badge-css.svg)
-![Badge-Javascript](../badges/badge-javascript.svg)
-![Badge-React](../badges/badge-react.svg)
-![Badge-Redux](../badges/badge-redux.svg)
-
-### ✔️Back-end
-
-![Badge-Firebase](../badges/badge-firebase.svg)
 
 ## 개발 내용
 
