@@ -3,9 +3,11 @@ import classes from "./MainPage.module.css";
 import Image from "next/image";
 import MainNav from "../UI/layout/main-nav";
 import { useState } from "react";
-import Footer from "../UI/layout/Footer";
 
-const MainPage = () => {
+const MainPage = (props) => {
+  const { featuredProjects } = props;
+  console.log(featuredProjects);
+
   const [isHovering, setIsHovering] = useState(0);
   let timeoutId;
   return (
@@ -28,7 +30,47 @@ const MainPage = () => {
           </div>
         </div>
         <div className={classes.main_contents}>
-          <div
+          {featuredProjects.map((item) => (
+            <div
+              key={item.id}
+              className={classes.main_contents_image}
+              onMouseOver={() => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                  setIsHovering(item.id);
+                }, 100);
+              }}
+              onMouseOut={() => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                  setIsHovering(0);
+                }, 100);
+              }}
+            >
+              <Link href={`/portfolio/${item.projectid}`}>
+                <Image
+                  fill
+                  className={`${classes.main_image} ${
+                    isHovering === item.id
+                      ? classes.main_image_mouseover
+                      : classes.main_image_mouseout
+                  }`}
+                  src={`/img/c2/김가영님사진2.jpg`}
+                  alt="c2Main"
+                />
+                <div
+                  className={`${
+                    isHovering === item.id
+                      ? classes.slide_layer_on
+                      : classes.slide_layer_off
+                  }`}
+                >
+                  <span className={classes.layer_span}>{item.title}</span>
+                </div>
+              </Link>
+            </div>
+          ))}
+          {/* <div
             className={classes.main_contents_image}
             onMouseOver={() => {
               clearTimeout(timeoutId);
@@ -142,7 +184,7 @@ const MainPage = () => {
                 <span className={classes.layer_span}>Woon</span>
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

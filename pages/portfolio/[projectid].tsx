@@ -5,27 +5,32 @@ import { GetStaticProps } from "next";
 import { getPostData, getPostsFiles, getDB } from "../../lib/posts-util";
 
 const SelectedPortpoiloPage = (props) => {
-  const { post, db } = props;
+  const { post, project, featuredProjects } = props;
+  console.log(featuredProjects);
   return (
     <Layout>
       <Head>
         <title>SKHU Capstone Design-</title>
         <meta name="description" />
       </Head>
-      <Post post={post} db={db} />
+      <Post post={post} db={project} />
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
+  console.log(params);
   const { projectid } = params;
-  const postData = getPostData(projectid);
-  const dbData = await getDB(projectid);
+  const mdContent = getPostData(projectid);
+  const project = await getDB(projectid);
+  const featuredProjects = await getDB();
+
   return {
     props: {
-      post: postData,
-      db: dbData,
+      post: mdContent,
+      project,
+      featuredProjects,
     },
   };
 };
