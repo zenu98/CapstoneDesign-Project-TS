@@ -23,14 +23,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
   console.log(params);
   const { projectid } = params;
   const mdContent = getPostData(projectid);
+
   const project = await getDB(projectid);
-  const featuredProjects = await getDB();
+
+  // const featuredProjects = await getDB();
 
   return {
     props: {
       post: mdContent,
       project,
-      featuredProjects,
+      // featuredProjects,
     },
   };
 };
