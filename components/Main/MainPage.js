@@ -5,7 +5,7 @@ import MainNav from "../UI/layout/main-nav";
 import { useState } from "react";
 
 const MainPage = (props) => {
-  const { featuredProjects } = props;
+  const { featuredProjects, mdContent } = props;
   console.log(featuredProjects);
 
   const [isHovering, setIsHovering] = useState(0);
@@ -55,7 +55,7 @@ const MainPage = (props) => {
                       ? classes.main_image_mouseover
                       : classes.main_image_mouseout
                   }`}
-                  src={`/img/c2/김가영님사진2.jpg`}
+                  src={`/images/posts/${item.projectid}/${item.projectid}.png`}
                   alt="c2Main"
                 />
                 <div

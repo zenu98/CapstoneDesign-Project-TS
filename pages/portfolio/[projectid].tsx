@@ -2,11 +2,11 @@ import Post from "../../components/pages/post";
 import Head from "next/head";
 import Layout from "../../components/UI/layout/Layout";
 import { GetStaticProps } from "next";
-import { getPostData, getPostsFiles, getDB } from "../../lib/posts-util";
+import { getPostData, getPostsFiles, getAllDB } from "../../lib/posts-util";
 
 const SelectedPortpoiloPage = (props) => {
-  const { post, project, featuredProjects } = props;
-  console.log(featuredProjects);
+  const { post, project } = props;
+
   return (
     <Layout>
       <Head>
@@ -24,7 +24,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const { projectid } = params;
   const mdContent = getPostData(projectid);
 
-  const project = await getDB(projectid);
+  const allData = await getAllDB();
+  const project = allData.find((data) => data.projectid === projectid);
 
   // const featuredProjects = await getDB();
 
@@ -32,6 +33,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       post: mdContent,
       project,
+
       // featuredProjects,
     },
   };

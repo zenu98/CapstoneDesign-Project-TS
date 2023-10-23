@@ -8,7 +8,8 @@ import Footer from "../UI/layout/Footer";
 const PostContent = (props) => {
   const { post, db } = props;
   console.log(db);
-  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+
+  const imagePath = `/images/posts/${db.projectid}/${db.projectid}.png`;
   const pos = props.pos;
   const [isClicked, setIsClicked] = useState(false);
   const linkClickHandler = () => {
@@ -52,7 +53,7 @@ const PostContent = (props) => {
               return (
                 <div key={index} className={classes.image}>
                   <Image
-                    src={`/images/posts/${post.slug}/${imageName}`}
+                    src={`/images/posts/${db.projectid}/${imageName}`}
                     alt={imageAlt}
                     width={imageWidth}
                     height={imageHeight}
