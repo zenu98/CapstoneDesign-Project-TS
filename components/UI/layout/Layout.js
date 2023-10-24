@@ -1,9 +1,10 @@
 const { Fragment } = require("react");
-import MainNavigation from "./main-navigation";
+import PostNav from "./post_nav";
+
 function Layout(props) {
   return (
     <Fragment>
-      <MainNavigation />
+      <PostNav />
       <main>{props.children}</main>
     </Fragment>
   );

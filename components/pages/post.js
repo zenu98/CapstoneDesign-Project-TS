@@ -1,4 +1,4 @@
-import DetailC1 from "./post_content";
+import PostContents from "./post_content";
 import { useState, useEffect } from "react";
 
 const Post = (props) => {
@@ -17,7 +17,7 @@ const Post = (props) => {
     };
   }, []);
 
-  return <DetailC1 post={post} pos={pos} db={db} />;
+  return <PostContents post={post} pos={pos} db={db} />;
 };
 
 export default Post;

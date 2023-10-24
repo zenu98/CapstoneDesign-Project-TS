@@ -1,5 +1,5 @@
 @mixin header-styles {
-  width: 100%;
+  width: 100vw;
   height: 4rem;
   background-color: white;
   display: flex;
@@ -20,12 +20,20 @@
 .header {
   @include header-styles;
   top: 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .header_down {
   @include header-styles;
   top: -6rem;
   opacity: 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .logo_image {
@@ -35,18 +43,25 @@
   height: 60px;
   position: relative !important;
 }
+
 .link_style {
   text-decoration: none;
   margin-right: 30px;
   font-family: "FSMeridian";
-  font-size: 20px;
+  font-size: 17px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 }
+
 .link_style:hover {
   color: gray;
 }
+
 .black {
   color: black;
 }
+
 .hotpink {
   color: rgb(221, 36, 67);
 }

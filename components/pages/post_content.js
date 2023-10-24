@@ -2,15 +2,14 @@ import classes from "./post_content.module.scss";
 import Image from "next/image";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-
 import Footer from "../UI/layout/Footer";
 
-const PostContent = (props) => {
-  const { post, db } = props;
+const PostContents = (props) => {
+  const { post, db, pos } = props;
   console.log(db);
 
   const imagePath = `/images/posts/${db.projectid}/${db.projectid}.png`;
-  const pos = props.pos;
+
   const [isClicked, setIsClicked] = useState(false);
   const linkClickHandler = () => {
     setIsClicked((prev) => !prev);
@@ -144,4 +143,4 @@ const PostContent = (props) => {
   );
 };
 
-export default PostContent;
+export default PostContents;
