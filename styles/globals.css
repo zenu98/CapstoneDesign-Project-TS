@@ -3,6 +3,7 @@
 }
 body {
   margin: 0;
+
   scroll-behavior: smooth; /* 스크롤 부드럽게 하기 */
   font-family: "NanumSquare", sans-serif;
   --size-1: 0.25rem;
@@ -17,6 +18,7 @@ body {
   --size-20: 5rem;
   --size-40: 10rem;
 }
+
 ::-webkit-scrollbar {
   width: 10px; /* 스크롤바의 너비 */
 }

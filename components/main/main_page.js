@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from "./MainPage.module.css";
+import classes from "./MainPage.module.scss";
 import Image from "next/image";
 import MainNav from "../UI/layout/main_nav";
 import { useState } from "react";

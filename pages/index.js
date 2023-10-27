@@ -1,18 +1,22 @@
 import Head from "next/head";
-import MainPage from "../components/Main/MainPage";
+
 import { getAllDB } from "../lib/posts-util";
+import MainPage from "../components/Main/main_page";
+import Layout from "../components/UI/layout/Layout";
 
 function HomePage(props) {
   const { featuredProjects } = props;
 
   return (
-    <div>
+    <>
       <Head>
         <title>NextJS Capstone Design</title>
         <meta name="description" content="SKHU Capstone Design Project" />
       </Head>
-      <MainPage featuredProjects={featuredProjects} />
-    </div>
+      <main>
+        <MainPage featuredProjects={featuredProjects} />
+      </main>
+    </>
   );
 }
 export const getStaticProps = async () => {
