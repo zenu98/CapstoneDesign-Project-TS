@@ -1,7 +1,6 @@
 #wrap {
-  overflow: hidden;
-  min-width: 1500px;
-  background-color: black;
+  border-style: solid;
+  border-width: var(--size-3) var(--size-3) 0px var(--size-3);
 }
 
 .section_container {
