@@ -1,7 +1,8 @@
+import { PageProps } from "../../lib/model";
 import PostContents from "./post_content";
 import { useState, useEffect } from "react";
 
-const Post = (props) => {
+const Post: React.FC<PageProps> = (props) => {
   const { post, db } = props;
   const [pos, setPos] = useState(0);
 

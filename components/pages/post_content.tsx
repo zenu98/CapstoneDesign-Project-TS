@@ -1,12 +1,17 @@
 import classes from "./post_content.module.scss";
+import { ReactNode } from "react";
 import Image from "next/image";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Footer from "../UI/layout/Footer";
+import { PageProps } from "../../lib/model";
 
-const PostContents = (props) => {
+interface PagePropsAddPos extends PageProps {
+  pos: number;
+}
+
+const PostContents: React.FC<PagePropsAddPos> = (props) => {
   const { post, db, pos } = props;
-  console.log(db);
 
   const imagePath = `/images/posts/${db.projectid}/${db.projectid}.png`;
 

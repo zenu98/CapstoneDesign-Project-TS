@@ -3,26 +3,26 @@ import Head from "next/head";
 import Layout from "../../components/UI/layout/Layout";
 import { GetStaticProps } from "next";
 import { getPostData, getPostsFiles, getAllDB } from "../../lib/posts-util";
+import { PageProps } from "../../lib/model";
 
-const SelectedPortpoiloPage = (props) => {
-  const { post, project } = props;
-
+const SelectedPortpoiloPage: React.FC<PageProps> = (props) => {
+  const { post, db } = props;
   return (
     <Layout>
       <Head>
         <title>SKHU Capstone Design-</title>
         <meta name="description" />
       </Head>
-      <Post post={post} db={project} />
+      <Post post={post} db={db} />
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params } = context;
-  console.log(params);
+
   const { projectid } = params;
-  const mdContent = getPostData(projectid);
+  const mdContent = getPostData(projectid as string);
 
   const allData = await getAllDB();
   const project = allData.find((data) => data.projectid === projectid);
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       post: mdContent,
-      project,
+      db: project,
 
       // featuredProjects,
     },

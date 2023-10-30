@@ -1,8 +1,9 @@
 import Link from "next/link";
-import classes from "./mainPage.module.scss";
+import classes from "./main_page.module.scss";
 import Image from "next/image";
 import MainNav from "../UI/layout/main_nav";
 import { useState } from "react";
+import Footer from "../UI/layout/Footer";
 
 const MainPage = (props) => {
   const { featuredProjects } = props;
@@ -12,28 +13,27 @@ const MainPage = (props) => {
   let timeoutId;
   return (
     <div id={classes.wrap}>
-      <header className={classes.abcd}>
-        <MainNav />
-      </header>
-      <section className={classes.section_container}>
+      <MainNav />
+      <section>
         <div className={classes.logo_container}>
           <div className={classes.logo_contents}>
             <Image
-              fill
-              src={`/img/굴절.jpeg`}
+              width={300}
+              height={500}
+              src={`/img/logo.jpeg`}
               className={`${classes.logo_image} `}
               alt="logo"
             />
-            <span>SKHU</span>
+            <span>Seo</span>
             <span>/</span>
-            <span>Capston Design Team</span>
+            <span>Portfolio Blog</span>
           </div>
         </div>
-        <div className={classes.main_contents}>
+        <div className={classes.main_contents_container}>
           {featuredProjects.map((item) => (
             <div
               key={item.id}
-              className={classes.main_contents_image}
+              className={classes.main_contents}
               onMouseOver={() => {
                 clearTimeout(timeoutId);
                 timeoutId = setTimeout(() => {
@@ -72,6 +72,7 @@ const MainPage = (props) => {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

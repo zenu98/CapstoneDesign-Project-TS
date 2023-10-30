@@ -1,8 +1,9 @@
 .header {
-  height: 6rem;
+  height: 4rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   position: relative;
   top: 0px;
@@ -13,9 +14,13 @@
 .header ul {
   list-style: none;
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
   margin: 0;
   padding: 0;
+  li {
+    text-align: center;
+  }
 }
 
 .logo_image {
@@ -26,10 +31,14 @@
   position: relative !important;
 }
 .link_style {
+  text-align: center;
   text-decoration: none;
   margin-right: 30px;
   font-family: "FSMeridian";
   font-size: 20px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
 }
 .link_style:hover {
   color: gray;
