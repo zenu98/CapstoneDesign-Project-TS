@@ -15,6 +15,7 @@ export interface ProjectData {
 }
 
 export interface PageProps {
-  post: PostData;
-  db: ProjectData;
+  post?: PostData;
+  db?: ProjectData;
+  featuredProjects?: ProjectData[];
 }

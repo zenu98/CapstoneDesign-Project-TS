@@ -1,7 +1,9 @@
-const { Fragment } = require("react");
 import PostNav from "./post_nav";
-
-function Layout(props) {
+import { ReactNode, Fragment } from "react";
+interface LayoutProps {
+  children: ReactNode;
+}
+function Layout(props: LayoutProps) {
   return (
     <Fragment>
       <PostNav />

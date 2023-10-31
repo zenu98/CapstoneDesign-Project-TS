@@ -4,13 +4,13 @@ import Image from "next/image";
 import MainNav from "../UI/layout/main_nav";
 import { useState } from "react";
 import Footer from "../UI/layout/Footer";
-
-const MainPage = (props) => {
+import { PageProps } from "../../lib/model";
+const MainPage: React.FC<PageProps> = (props) => {
   const { featuredProjects } = props;
   console.log(featuredProjects);
 
-  const [isHovering, setIsHovering] = useState(0);
-  let timeoutId;
+  const [isHovering, setIsHovering] = useState(null);
+  let timeoutId: NodeJS.Timeout;
   return (
     <div id={classes.wrap}>
       <MainNav />
@@ -51,9 +51,7 @@ const MainPage = (props) => {
                 <Image
                   fill
                   className={`${classes.main_image} ${
-                    isHovering === item.id
-                      ? classes.main_image_mouseover
-                      : classes.main_image_mouseout
+                    isHovering === item.id ? classes.mouseover : ""
                   }`}
                   src={`/images/posts/${item.projectid}/${item.projectid}.png`}
                   alt="c2Main"
@@ -61,7 +59,7 @@ const MainPage = (props) => {
                 <div
                   className={`${
                     isHovering === item.id
-                      ? classes.slide_layer_on
+                      ? classes.slide_layer
                       : classes.slide_layer_off
                   }`}
                 >

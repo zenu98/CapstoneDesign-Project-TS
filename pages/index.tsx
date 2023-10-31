@@ -1,12 +1,9 @@
 import Head from "next/head";
-
 import { getAllDB } from "../lib/posts-util";
-import MainPage from "../components/Main/main_page";
-import Layout from "../components/UI/layout/Layout";
-
-function HomePage(props) {
-  const { featuredProjects } = props;
-
+import MainPage from "../components/main/main_page";
+import { GetStaticProps } from "next";
+import { PageProps } from "../lib/model";
+const HomePage: React.FC<PageProps> = ({ featuredProjects }) => {
   return (
     <>
       <Head>
@@ -18,8 +15,8 @@ function HomePage(props) {
       </main>
     </>
   );
-}
-export const getStaticProps = async () => {
+};
+export const getStaticProps: GetStaticProps = async () => {
   const allData = await getAllDB();
 
   const featuredProjects = allData.filter((data) => data.featured === true);

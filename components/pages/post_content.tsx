@@ -1,10 +1,10 @@
 import classes from "./post_content.module.scss";
-import { ReactNode } from "react";
 import Image from "next/image";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Footer from "../UI/layout/Footer";
 import { PageProps } from "../../lib/model";
+import { ReactNode } from "react";
 
 interface PagePropsAddPos extends PageProps {
   pos: number;
@@ -35,8 +35,9 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
 
   const customRenderers = {
     p(paragraph) {
-      const { node } = paragraph;
-      const images = node.children.filter((child) => child.tagName === "img");
+      const images = paragraph.node.children.filter(
+        (child) => child.tagName === "img"
+      );
 
       if (images.length > 0) {
         return (

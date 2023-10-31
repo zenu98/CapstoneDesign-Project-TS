@@ -1,10 +1,8 @@
-import Link from "next/link";
 import classes from "./Footer.module.css";
-import { useRouter } from "next/router";
+
 import Image from "next/image";
 
 const Footer = () => {
-  const router = useRouter();
   return (
     <div className={classes.container}>
       <div>
