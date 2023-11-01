@@ -5,16 +5,16 @@ import MainNav from "../UI/layout/main_nav";
 import { useState } from "react";
 import Footer from "../UI/layout/Footer";
 import { PageProps } from "../../lib/model";
+import AllPosts from "./all_post";
 const MainPage: React.FC<PageProps> = (props) => {
-  const { featuredProjects } = props;
-  console.log(featuredProjects);
+  const { featuredProjects, allData } = props;
 
   const [isHovering, setIsHovering] = useState(null);
   let timeoutId: NodeJS.Timeout;
   return (
     <div id={classes.wrap}>
       <MainNav />
-      <section>
+      <section className={classes.section}>
         <div className={classes.logo_container}>
           <div className={classes.logo_contents}>
             <Image
@@ -70,6 +70,7 @@ const MainPage: React.FC<PageProps> = (props) => {
           ))}
         </div>
       </section>
+      <AllPosts allData={allData} />
       <Footer />
     </div>
   );

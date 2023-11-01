@@ -7,11 +7,10 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const navigationItems = [
-  { path: "/portfolio/word-puzzle", text: "Posts" },
+  { path: "/", text: "Home" },
   { path: "/portfolio/pokemon-type-cal", text: "Pokemon" },
   { path: "/portfolio/project-aa", text: "ProjectAA" },
   { path: "/portfolio/word-puzzle", text: "Puzzle" },
-  { path: "/portfolio/word-puzzle", text: "About" },
 ];
 
 const PostNav = (props) => {

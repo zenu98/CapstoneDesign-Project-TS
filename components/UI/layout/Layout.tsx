@@ -1,5 +1,6 @@
 import PostNav from "./post_nav";
 import { ReactNode, Fragment } from "react";
+
 interface LayoutProps {
   children: ReactNode;
 }

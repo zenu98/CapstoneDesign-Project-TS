@@ -18,4 +18,5 @@ export interface PageProps {
   post?: PostData;
   db?: ProjectData;
   featuredProjects?: ProjectData[];
+  allData?: ProjectData[];
 }
