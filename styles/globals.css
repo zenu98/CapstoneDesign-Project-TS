@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
+  cursor: none;
 }
+
 body {
   margin: 0;
 

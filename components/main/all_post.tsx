@@ -1,12 +1,13 @@
+import { PageProps } from "../../lib/model";
+
 import classes from "./all_post.module.scss";
 import PostsGrid from "./posts_grid";
 
-const AllPosts = (props) => {
-  console.log(props.allData);
+const AllPosts: React.FC<PageProps> = (props) => {
   return (
     <section className={classes.posts}>
       <h1>Others</h1>
-      <PostsGrid posts={props.allData} />
+      <PostsGrid allData={props.allData} />
     </section>
   );
 };

@@ -3,13 +3,18 @@ import { getAllDB } from "../lib/posts-util";
 import MainPage from "../components/main/main_page";
 import { GetStaticProps } from "next";
 import { PageProps } from "../lib/model";
+
+import { useRef } from "react";
+
 const HomePage: React.FC<PageProps> = ({ featuredProjects, allData }) => {
+  const stickyElement = useRef(null);
   return (
     <>
       <Head>
         <title>NextJS Capstone Design</title>
         <meta name="description" content="SKHU Capstone Design Project" />
       </Head>
+
       <main>
         <MainPage featuredProjects={featuredProjects} allData={allData} />
       </main>

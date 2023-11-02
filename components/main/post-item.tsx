@@ -1,8 +1,9 @@
 import Link from "next/link";
 import classes from "./post-item.module.scss";
 import Image from "next/image";
-function PostItem(props) {
-  const { title, excerpt, date, projectid } = props.post;
+import { PageProps } from "../../lib/model";
+const PostItem: React.FC<PageProps> = (props) => {
+  const { title, excerpt, date, projectid } = props.db;
   const formattedDate = new Date(date).toLocaleDateString("ko-KR", {
     month: "long",
     year: "numeric",
@@ -31,5 +32,5 @@ function PostItem(props) {
       </Link>
     </li>
   );
-}
+};
 export default PostItem;

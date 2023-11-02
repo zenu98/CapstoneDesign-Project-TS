@@ -115,10 +115,10 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
               <ul>{backTechList}</ul>
 
               {isClicked ? (
-                <div onClick={linkClickHandler}>
-                  <h2>- Link</h2>
+                <div>
+                  <h2 onClick={linkClickHandler}>- Link</h2>
                   <Image
-                    src={`/img/Instagram_icon.png`}
+                    src="/img/github.png"
                     alt="insta"
                     width={50}
                     height={50}

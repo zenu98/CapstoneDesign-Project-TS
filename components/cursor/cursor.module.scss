@@ -1,0 +1,13 @@
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(221, 36, 67);
+  position: fixed;
+  border-radius: 50%;
+  z-index: 99;
+  border: 1px solid white;
+  pointer-events: none;
+}
+.clicked {
+  background-color: blue; // 클릭했을 때 배경색 변경
+}
