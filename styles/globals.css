@@ -22,6 +22,7 @@ body {
 }
 
 ::-webkit-scrollbar {
+  display: none;
   width: 10px; /* 스크롤바의 너비 */
 }
 
