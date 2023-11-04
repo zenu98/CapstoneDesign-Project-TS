@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Footer from "../UI/layout/Footer";
 import { PageProps } from "../../lib/model";
-import { ReactNode } from "react";
+
 import ScrollToTop from "../UI/button/scrollToTop";
 import Link from "next/link";
 
@@ -50,18 +50,17 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
               let isBadge = false;
               let imageWidth = 1919;
               let imageHeight = 983;
-              let additionalClassName = "";
+
               if (imageName.includes("badge")) {
                 imageHeight = 100;
                 imageWidth = 300;
                 isBadge = true;
-                additionalClassName = classes.badgeImage;
               }
 
               return (
                 <div
                   key={index}
-                  className={`${classes.image} ${additionalClassName}`}
+                  className={`${isBadge ? classes.badgeImage : classes.image}`}
                 >
                   <Image
                     src={`/images/posts/${db.projectid}/${imageName}`}
