@@ -108,6 +108,7 @@ export async function getAllDB(): Promise<AllData> {
       front: db.front,
       back: db.back,
       featured: db.featured,
+      link: db.link,
     }));
 
     client.close();

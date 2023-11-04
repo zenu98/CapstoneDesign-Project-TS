@@ -12,6 +12,7 @@ export interface ProjectData {
   front: string[];
   back: string[];
   featured: boolean;
+  link: string;
 }
 
 export interface PageProps {

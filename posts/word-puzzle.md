@@ -6,9 +6,7 @@ isFeatured: true
 date: "2023-02"
 ---
 
-## 단어 맞추기 퍼즐
-
-### [동물단어퍼즐](https://github.com/zenu98/ReactStudy/tree/main/toy-project/word-puzzle)
+## 동물 단어 퍼즐
 
 - 첫번째 개인 제작 토이 프로젝트
 - 개발인원: 1명

@@ -9,7 +9,18 @@
     height: 100%;
   }
 }
+.badgeImage {
+  img {
+    height: 80px !important;
+  }
+}
 
+.imgContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 .container {
   background-color: white;
   position: relative;
@@ -47,7 +58,12 @@
           width: 100%;
         }
       }
-
+      img {
+        transition: 0.3s ease;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
       h2 {
         margin-bottom: 10px;
         font-family: "NeueHaasDisplayLight";
@@ -85,10 +101,11 @@
   p {
     color: var(--color-grey-800);
   }
-  .image {
-    margin: var(--size-4) auto;
-    width: 90%;
-  }
+  // .image {
+  //   display: flex;
+  //   margin: var(--size-4) auto;
+  //   width: 90%;
+  // }
 }
 
 @media (max-width: 768px) {
@@ -107,24 +124,4 @@
       }
     }
   }
-}
-
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
-    format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NanumSquare";
-
-  font-style: normal;
-  src: url("/fonts/NanumSquareRoundB.woff") format("woff");
-}
-
-@font-face {
-  font-family: "NeueHaasDisplayLight";
-  src: url("/fonts/NeueHaasDisplayLight.woff") format("woff");
 }

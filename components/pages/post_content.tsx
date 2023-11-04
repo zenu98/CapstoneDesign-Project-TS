@@ -5,6 +5,8 @@ import ReactMarkdown from "react-markdown";
 import Footer from "../UI/layout/Footer";
 import { PageProps } from "../../lib/model";
 import { ReactNode } from "react";
+import ScrollToTop from "../UI/button/scrollToTop";
+import Link from "next/link";
 
 interface PagePropsAddPos extends PageProps {
   pos: number;
@@ -41,28 +43,32 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
 
       if (images.length > 0) {
         return (
-          <div>
+          <div className={classes.imgContainer}>
             {images.map((image, index) => {
               const imageName = image.properties.src;
               const imageAlt = image.properties.alt;
               let isBadge = false;
               let imageWidth = 1919;
               let imageHeight = 983;
-
+              let additionalClassName = "";
               if (imageName.includes("badge")) {
                 imageHeight = 100;
                 imageWidth = 300;
                 isBadge = true;
+                additionalClassName = classes.badgeImage;
               }
 
               return (
-                <div key={index} className={classes.image}>
+                <div
+                  key={index}
+                  className={`${classes.image} ${additionalClassName}`}
+                >
                   <Image
                     src={`/images/posts/${db.projectid}/${imageName}`}
                     alt={imageAlt}
                     width={imageWidth}
                     height={imageHeight}
-                    layout={isBadge ? "intrinsic" : "responsive"}
+                    layout={"responsive"}
                   />
                 </div>
               );
@@ -117,12 +123,14 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
               {isClicked ? (
                 <div>
                   <h2 onClick={linkClickHandler}>- Link</h2>
-                  <Image
-                    src="/img/github.png"
-                    alt="insta"
-                    width={50}
-                    height={50}
-                  />
+                  <Link href={db.link}>
+                    <Image
+                      src="/img/github.png"
+                      alt="insta"
+                      width={50}
+                      height={50}
+                    />
+                  </Link>
                 </div>
               ) : (
                 <div onClick={linkClickHandler}>
@@ -143,7 +151,7 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
           </ReactMarkdown>
         </article>
       </section>
-
+      <ScrollToTop />
       <Footer />
     </>
   );

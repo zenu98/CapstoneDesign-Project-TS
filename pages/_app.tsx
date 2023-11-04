@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import { Fragment } from "react";
 import "../styles/globals.css";
 import Head from "next/head";
-import Cursor from "../components/cursor/cursor";
+import Cursor from "../components/UI/cursor/cursor";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

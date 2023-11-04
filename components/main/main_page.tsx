@@ -6,7 +6,7 @@ import { useState } from "react";
 import Footer from "../UI/layout/Footer";
 import { PageProps } from "../../lib/model";
 import AllPosts from "./all_post";
-import { forwardRef } from "react";
+import ScrollToTop from "../UI/button/scrollToTop";
 const MainPage: React.FC<PageProps> = (props) => {
   const { featuredProjects, allData } = props;
 
@@ -72,6 +72,7 @@ const MainPage: React.FC<PageProps> = (props) => {
         </div>
       </section>
       <AllPosts allData={allData} />
+      <ScrollToTop />
       <Footer />
     </div>
   );
