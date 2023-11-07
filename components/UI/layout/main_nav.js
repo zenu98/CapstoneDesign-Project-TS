@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Logo from "./logo";
+
 import classes from "./main_nav.module.scss";
-import Image from "next/image";
+
 import { useRouter } from "next/router";
 
 const navigationItems = [

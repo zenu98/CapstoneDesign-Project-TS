@@ -5,8 +5,7 @@
 
 body {
   margin: 0;
-
-  scroll-behavior: smooth; /* 스크롤 부드럽게 하기 */
+  scroll-behavior: smooth;
   font-family: "NanumSquare", sans-serif;
   --size-1: 0.25rem;
   --size-2: 0.5rem;
@@ -22,7 +21,6 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display: none;
   width: 10px; /* 스크롤바의 너비 */
 }
 
@@ -47,8 +45,16 @@ body {
   font-family: "NanumSquare";
   src: url("/fonts/NanumSquareRoundB.woff") format("woff");
 }
-
+@font-face {
+  font-family: "NanumSquareL";
+  src: url("/fonts/NanumSquareRoundR.woff") format("woff");
+}
 @font-face {
   font-family: "NeueHaasDisplayLight";
   src: url("/fonts/NeueHaasDisplayLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FSMeridian";
+  src: url("/fonts/FSMeridianTrial-Bold.woff") format("woff");
 }

@@ -16,11 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin: 0;
+  margin: 10px;
   padding: 0;
-  li {
-    text-align: center;
-  }
 }
 
 .logo_image {
@@ -33,10 +30,10 @@
 .link_style {
   text-align: center;
   text-decoration: none;
-  margin-right: 30px;
+  margin: 0 10px;
   font-family: "FSMeridian";
   font-size: 20px;
-  @media (max-width: 768px) {
+  @media (max-width: 430px) {
     font-size: 15px;
   }
 }
@@ -53,9 +50,4 @@
   .header ul {
     gap: 0.5rem;
   }
-}
-
-@font-face {
-  font-family: "FSMeridian";
-  src: url("/fonts/FSMeridianTrial-Bold.woff") format("woff");
 }

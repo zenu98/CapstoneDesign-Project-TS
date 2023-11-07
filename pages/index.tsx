@@ -1,13 +1,12 @@
 import Head from "next/head";
 import { getAllDB } from "../lib/posts-util";
-import MainPage from "../components/main/main_page";
+import MainPage from "../components/pages/main/main_page";
 import { GetStaticProps } from "next";
 import { PageProps } from "../lib/model";
 
 import { useRef } from "react";
 
 const HomePage: React.FC<PageProps> = ({ featuredProjects, allData }) => {
-  const stickyElement = useRef(null);
   return (
     <>
       <Head>
@@ -24,7 +23,7 @@ const HomePage: React.FC<PageProps> = ({ featuredProjects, allData }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const allData = await getAllDB();
   const featuredProjects = allData.filter((data) => data.featured === true);
-  const sortedDatas = allData.sort((a, b) => (a.date > b.date ? 1 : -1));
+  const sortedDatas = allData.sort((a, b) => (a.date > b.date ? -1 : 1));
 
   return {
     props: {

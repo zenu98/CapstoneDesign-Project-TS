@@ -1,10 +1,10 @@
-# Next.js 포스트 블로그
+## Next.js 포스트 블로그
 
 ## 프로젝트 정보
 
-개발인원: 1명
-개발기간: 2023.09 ~ 2023.10
-https://seo-nextjs-blog.vercel.app/
+- 개발인원: 1명
+- 개발기간: 2023.09 ~ 2023.10
+- [Link](https://seo-nextjs-blog.vercel.app/)
 
 ## 프로젝트 소개
 
@@ -32,7 +32,7 @@ React-Markdown을 통해 마크다운으로부터 이미지와 코드를 렌더�
 
 - ### MongoDB 문의 API 라우터
 
-![nextblog-contact](https://github.com/zenu98/nextjs-blog/assets/90780629/f8a528ec-c7c0-4694-be2e-2340dc446180)
+![Next-blog-contact](next-blog-contact.png)
 
 ```js
 import { MongoClient } from "mongodb";
@@ -87,10 +87,11 @@ export default handler;
 ```
 
 - ### 첫 배포
-  ![nextblog-vercel](https://github.com/zenu98/nextjs-blog/assets/90780629/ad3bb0ba-238e-45f9-9567-df65e51df94b)
-  배포를 하는 경험은 처음이라 이번 기회에 배포를 하면서 Next.js가 제공하는 두가지 다른 형태의 배포 옵션에 대해 공부했습니다. 가장 흔히 쓰이는 첫 번째 옵션은 표준 빌드(Standard Build)이며
-  두 번째는 전체 정적 빌드(Full Static Build)로 웹 사이트 전체를 정적 웹 사이트로 배포하는 옵션이 있습니다. 이 애플리케이션은 API 라우트를 사용하고 있고
-  일부 페이지에는 유효성 재검사도 실행하고 있고 이런 기능들은 모두 Node.js 서버가 필요하기 때문에 표준 빌드 방식으로 배포를 하였습니다.
+
+![Next-blog-vercel](next-blog-vercel.png)
+배포를 하는 경험은 처음이라 이번 기회에 배포를 하면서 Next.js가 제공하는 두가지 다른 형태의 배포 옵션에 대해 공부했습니다. 가장 흔히 쓰이는 첫 번째 옵션은 표준 빌드(Standard Build)이며
+두 번째는 전체 정적 빌드(Full Static Build)로 웹 사이트 전체를 정적 웹 사이트로 배포하는 옵션이 있습니다. 이 애플리케이션은 API 라우트를 사용하고 있고
+일부 페이지에는 유효성 재검사도 실행하고 있고 이런 기능들은 모두 Node.js 서버가 필요하기 때문에 표준 빌드 방식으로 배포를 하였습니다.
 
 #### 배포 사전준비 단계
 

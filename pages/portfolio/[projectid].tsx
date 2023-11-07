@@ -1,4 +1,4 @@
-import Post from "../../components/pages/post";
+import Post from "../../components/pages/post/post";
 import Head from "next/head";
 import Layout from "../../components/UI/layout/Layout";
 import { GetStaticProps } from "next";
