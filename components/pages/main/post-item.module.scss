@@ -18,11 +18,14 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   max-height: 20rem;
+  min-height: 20rem;
   overflow: hidden;
 }
 
 .image img {
   object-fit: cover;
+  min-height: 20rem;
+  max-height: 25rem;
 }
 
 .content {

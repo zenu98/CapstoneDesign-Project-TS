@@ -13,12 +13,13 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 0 auto 80px auto;
+    margin: 20px auto 60px auto;
     height: 100px;
     .logo_image {
       position: relative !important;
       width: 150px !important;
       height: 160px !important;
+      margin-bottom: 15px;
     }
     span {
       text-align: center;
@@ -31,6 +32,9 @@
 @media (max-width: 1110px) {
   .logo_container {
     margin: 2.6rem auto 0 auto;
+    div {
+      margin: 60px auto 50px auto;
+    }
   }
 }
 .main_contents_container {

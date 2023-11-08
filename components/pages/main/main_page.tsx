@@ -21,7 +21,7 @@ const MainPage: React.FC<PageProps> = (props) => {
             <Image
               width={300}
               height={500}
-              src={`/img/logo.jpeg`}
+              src={`/images/logo/logo.jpg`}
               className={`${classes.logo_image} `}
               alt="logo"
             />

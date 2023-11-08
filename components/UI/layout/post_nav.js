@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./logo";
+
 import classes from "./post_nav.module.scss";
 import { useEffect, useState, useRef, useMemo } from "react";
 import { throttle } from "lodash";
@@ -51,7 +51,7 @@ const PostNav = (props) => {
           <div className={classes.logo_image}>
             <Image
               fill
-              src={`/img/logo.jpeg`}
+              src={`/images/logo/logo.jpg`}
               className={classes.logo_image}
               alt="logo"
             />
