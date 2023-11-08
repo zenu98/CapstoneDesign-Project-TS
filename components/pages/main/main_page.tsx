@@ -7,6 +7,7 @@ import Footer from "../../UI/layout/Footer";
 import { PageProps } from "../../../lib/model";
 import AllPosts from "./all_post";
 import ScrollToTop from "../../UI/button/scrollToTop";
+
 const MainPage: React.FC<PageProps> = (props) => {
   const { featuredProjects, allData } = props;
 

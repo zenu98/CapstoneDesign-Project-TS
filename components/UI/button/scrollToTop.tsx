@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import classes from "./scrollToTop.module.scss";
 const ScrollToTop = () => {
-  const [toggleBtn, setToggleBtn] = useState(true);
+  const [toggleBtn, setToggleBtn] = useState(false);
 
   const handleScroll = () => {
     const { scrollY } = window;
@@ -23,7 +23,10 @@ const ScrollToTop = () => {
   };
 
   return toggleBtn ? (
-    <IoIosArrowDropupCircle onClick={goToTop} className={classes.toTop} />
+    <div>
+      <div className={classes.toTop_background} />
+      <IoIosArrowDropupCircle onClick={goToTop} className={classes.toTop} />
+    </div>
   ) : null;
 };
 
