@@ -128,8 +128,8 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
                   <h2 onClick={linkClickHandler}>- Link</h2>
                   <Link href={db.link}>
                     <Image
-                      src="/img/github.png"
-                      alt="insta"
+                      src="/images/github.png"
+                      alt="github"
                       width={50}
                       height={50}
                     />

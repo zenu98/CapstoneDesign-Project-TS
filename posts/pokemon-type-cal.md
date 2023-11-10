@@ -4,8 +4,6 @@ image: pokemon.png
 
 ## 포켓몬스터 속성 계산기
 
-### [포켓몬 상성 계산기](https://github.com/zenu98/ReactStudy/tree/main/toy-project/poke-element)
-
 ![Pokemon-Type](pokemon-type.png)
 
 - 개발기간: 2023.02 ~ 2023.03
@@ -31,5 +29,5 @@ image: pokemon.png
 
 선택한 속성들에 대한 공격/방어 속성 상성을 계산하여 출력한다.
 
-- ### Redux 비동기 통신
-  firebase에 있는 데이터를 받아오기 위한 비동기 통신을 redux를 통해 구현하였다.
+- ### Redux Toolkit 비동기 통신, 상태관리
+  firebase에 있는 데이터를 받아오기 위한 비동기 통신을 redux를 통해 구현하였고, Redux-toolkit의 store를 통해 각 상태들을 관리하였습니다.

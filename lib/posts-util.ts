@@ -25,12 +25,13 @@ export function getPostData(postIdentifier: string): PostData {
   return postData;
 }
 
+let client;
+const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.hgiisqy.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
 let allData: AllData | null = null;
 export async function getAllDB(): Promise<AllData> {
   if (allData === null) {
-    const client = await MongoClient.connect(
-      "mongodb+srv://Seo:5GexqTGPY0cnBGfP@cluster0.hgiisqy.mongodb.net/post?retryWrites=true&w=majority"
-    );
+    client = await MongoClient.connect(connectionString);
     const db = client.db();
     const postCollection = db.collection("postdata");
 

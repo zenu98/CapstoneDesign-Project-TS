@@ -27,6 +27,9 @@
   그래서 기존의 코드를 들여다 볼 기회가 생겼는데 정말 엉망이었습니다...
 
   ```js
+  // 기존 CapstoneDesign 프로젝트의 코드
+
+
   // 불필요한 중복코드
        <div className={classes.imagethree}>
           <div className={`${classes["imagethree-content"]}`}>
@@ -101,4 +104,9 @@
   react-markdown과 PrismLight 라이브러리를 통해 게시글의 본문을 마크다운 형식의 파일을 화면에 보이게 하고 코드하이라이팅을 적용하였습니다.
 
 - ### Framer Motion
+
   Framer Motion을 사용해 커스텀 마우스 커서를 제작했습니다.
+
+- ### Next.js 라우터 이벤트
+
+  Router 객체의 'events'속성을 사용하여 라우터이벤트에 대한 함수를 등록하여 페이지 이동 시 로딩스피너를 구현하였습니다.
