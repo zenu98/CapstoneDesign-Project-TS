@@ -25,33 +25,38 @@ export function getPostData(postIdentifier: string): PostData {
   return postData;
 }
 
-let client;
+let client: MongoClient;
 const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.hgiisqy.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
-
-let allData: AllData | null = null;
+let allData: { data: AllData; timestamp: number } = null;
+const cacheTimeout = 5 * 60 * 1000;
 export async function getAllDB(): Promise<AllData> {
-  if (allData === null) {
-    client = await MongoClient.connect(connectionString);
-    const db = client.db();
-    const postCollection = db.collection("postdata");
-
-    const posts = await postCollection.find({}).toArray();
-    const postArray = posts.map((db) => ({
-      title: db.title,
-      excerpt: db.excerpt,
-      date: db.date,
-      description: db.description,
-      id: db._id.toString(),
-      projectid: db.projectid,
-      front: db.front,
-      back: db.back,
-      featured: db.featured,
-      link: db.link,
-    }));
-
-    client.close();
-    allData = postArray;
+  if (allData && Date.now() - allData.timestamp < cacheTimeout) {
+    return allData.data;
   }
 
-  return allData;
+  client = await MongoClient.connect(connectionString);
+  const db = client.db();
+  const postCollection = db.collection("postdata");
+
+  const [posts] = await Promise.all([postCollection.find({}).toArray()]);
+  const postArray = posts.map((db) => ({
+    title: db.title,
+    excerpt: db.excerpt,
+    date: db.date,
+    description: db.description,
+    id: db._id.toString(),
+    projectid: db.projectid,
+    front: db.front,
+    back: db.back,
+    featured: db.featured,
+    link: db.link,
+  }));
+  allData = {
+    data: postArray,
+    timestamp: Date.now(),
+  };
+
+  client.close();
+
+  return postArray;
 }

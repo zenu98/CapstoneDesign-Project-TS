@@ -4,8 +4,6 @@ import MainPage from "../components/pages/main/main_page";
 import { GetStaticProps } from "next";
 import { PageProps } from "../lib/model";
 
-import { useRef } from "react";
-
 const HomePage: React.FC<PageProps> = ({ featuredProjects, allData }) => {
   return (
     <>

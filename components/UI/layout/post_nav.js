@@ -13,9 +13,7 @@ const navigationItems = [
   { path: "/portfolio/word-puzzle", text: "Puzzle" },
 ];
 
-const PostNav = (props) => {
-  const { db } = props;
-  console.log(db);
+const PostNav = () => {
   const router = useRouter();
   const prevScrollY = useRef(0); // 스크롤 이전 Y값 제어
   const [visible, setVisible] = useState(true); // visible이라는 변수에 기본값으로 true 설정
@@ -24,8 +22,6 @@ const PostNav = (props) => {
     () =>
       throttle(() => {
         const currentScrollY = window.scrollY;
-        console.log("이전 Y축", prevScrollY.current);
-        console.log("현재 Y축", currentScrollY);
 
         if (prevScrollY.current < currentScrollY) {
           setVisible(false);
@@ -54,6 +50,7 @@ const PostNav = (props) => {
               src={`/images/logo/logo.jpg`}
               className={classes.logo_image}
               alt="logo"
+              sizes="(max-width: 100vw) 100vw"
             />
           </div>
         </Link>

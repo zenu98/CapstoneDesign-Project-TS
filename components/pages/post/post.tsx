@@ -16,7 +16,11 @@ const Post: React.FC<PageProps> = (props) => {
     };
   }, []);
 
-  return <PostContents post={post} pos={pos} db={db} />;
+  return (
+    <>
+      <PostContents post={post} pos={pos} db={db} />
+    </>
+  );
 };
 
 export default Post;

@@ -11,11 +11,21 @@ const Footer = () => {
         </div>
 
         <div className={classes.footer_contents}>
-          <Image src="/img/gmail.png" width={40} height={40} alt="gmail" />
+          <Image
+            src="/images/logo/gmail.png"
+            width={40}
+            height={40}
+            alt="gmail"
+          />
           <span>zenu987@gmail.com</span>
         </div>
         <div className={classes.footer_contents}>
-          <Image src="/img/github.png" width={40} height={40} alt="github" />
+          <Image
+            src="/images/logo/github.png"
+            width={40}
+            height={40}
+            alt="github"
+          />
           <span>github.com/zenu98</span>
         </div>
         <div className={classes.footer_contents}>

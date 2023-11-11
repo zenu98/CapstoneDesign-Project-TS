@@ -57,6 +57,8 @@ const MainPage: React.FC<PageProps> = (props) => {
                   }`}
                   src={`/images/posts/${item.projectid}/${item.projectid}.png`}
                   alt="c2Main"
+                  sizes="(max-width: 100vw) 100vw, 100vw"
+                  priority={true}
                 />
                 <div
                   className={`${

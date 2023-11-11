@@ -4,7 +4,7 @@ import classes from "./posts-grid.module.scss";
 
 const PostsGrid: React.FC<PageProps> = (props) => {
   const { allData } = props;
-  console.log(props);
+
   return (
     <ul className={classes.grid}>
       {allData.map((post) => (

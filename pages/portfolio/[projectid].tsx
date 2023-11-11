@@ -7,6 +7,7 @@ import { PageProps } from "../../lib/model";
 
 const SelectedPortpoiloPage: React.FC<PageProps> = (props) => {
   const { post, db } = props;
+
   return (
     <Layout>
       <Head>
@@ -27,14 +28,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const allData = await getAllDB();
   const project = allData.find((data) => data.projectid === projectid);
 
-  // const featuredProjects = await getDB();
-
   return {
     props: {
       post: mdContent,
       db: project,
-
-      // featuredProjects,
     },
   };
 };
