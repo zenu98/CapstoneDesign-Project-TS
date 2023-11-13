@@ -12,7 +12,7 @@ export function getPostsFiles(): string[] {
 }
 
 export function getPostData(postIdentifier: string): PostData {
-  const postSlug = postIdentifier.replace(/\.md$/, ""); // 파일 확장자 제거
+  const postSlug = postIdentifier.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { content } = matter(fileContent);
