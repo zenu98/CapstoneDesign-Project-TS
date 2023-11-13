@@ -7,7 +7,7 @@ import Footer from "../../UI/layout/Footer";
 import { PageProps } from "../../../lib/model";
 import AllPosts from "./all_post";
 import ScrollToTop from "../../UI/button/scrollToTop";
-
+import { nanum } from "../post/post_content";
 const MainPage: React.FC<PageProps> = (props) => {
   const { featuredProjects, allData } = props;
 
@@ -67,7 +67,7 @@ const MainPage: React.FC<PageProps> = (props) => {
                       : classes.slide_layer_off
                   }`}
                 >
-                  <span className={classes.layer_span}>{item.title}</span>
+                  <span className={`${classes.layer_span}`}>{item.title}</span>
                 </div>
               </Link>
             </div>

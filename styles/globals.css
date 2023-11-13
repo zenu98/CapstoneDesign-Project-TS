@@ -6,7 +6,7 @@
 body {
   margin: 0;
   scroll-behavior: smooth;
-  font-family: "NanumSquare", sans-serif;
+  font-family: "Noto Sans KR";
   --size-1: 0.25rem;
   --size-2: 0.5rem;
   --size-3: 0.75rem;
@@ -32,29 +32,4 @@ body {
 
 ::-webkit-scrollbar-track {
   background: rgba(233, 236, 239); /*스크롤바 뒷 배경 색상*/
-}
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff")
-    format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "NanumSquare";
-  src: url("/fonts/NanumSquareRoundB.woff") format("woff");
-}
-@font-face {
-  font-family: "NanumSquareL";
-  src: url("/fonts/NanumSquareRoundR.woff") format("woff");
-}
-@font-face {
-  font-family: "NeueHaasDisplayLight";
-  src: url("/fonts/NeueHaasDisplayLight.woff") format("woff");
-}
-
-@font-face {
-  font-family: "FSMeridian";
-  src: url("/fonts/FSMeridianTrial-Bold.woff") format("woff");
 }

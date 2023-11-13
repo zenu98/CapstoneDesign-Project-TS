@@ -95,7 +95,7 @@
   overflow: hidden;
   text-decoration: none;
   margin: 3px;
-  font-family: "SCfont";
+  font-weight: 800;
   font-size: 5vw;
   color: black;
 }
@@ -130,9 +130,4 @@
   100% {
     opacity: 1;
   }
-}
-
-@font-face {
-  font-family: "SCfont";
-  src: url("/fonts/good-head-sc-office-pro-extd-bold.woff") format("woff");
 }

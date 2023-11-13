@@ -4,10 +4,21 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Footer from "../../UI/layout/Footer";
 import { PageProps } from "../../../lib/model";
-
 import ScrollToTop from "../../UI/button/scrollToTop";
 import Link from "next/link";
 import customRenderers from "./custom_render";
+import { Noto_Sans_KR, Nanum_Gothic } from "next/font/google";
+
+const noto = Noto_Sans_KR({
+  preload: false,
+  weight: ["100", "400", "700"],
+  display: "swap",
+});
+export const nanum = Nanum_Gothic({
+  preload: false,
+  weight: ["400", "700", "800"],
+  display: "swap",
+});
 
 interface PagePropsAddPos extends PageProps {
   pos: number;
@@ -57,19 +68,20 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
           <h1>
             {db.title}, <span>{db.excerpt}</span>
           </h1>
-          <div className={classes.header_contents_container}>
+          <div className={`${classes.header_contents_container}`}>
             <div className={classes.header_contents}>
-              <h2>Front</h2>
-              <ul>{frontTechList}</ul>
-              <h2>Back</h2>
-              <ul>{backTechList}</ul>
-
+              <div className={nanum.className}>
+                <h2>Front</h2>
+                <ul>{frontTechList}</ul>
+                <h2>Back</h2>
+                <ul>{backTechList}</ul>
+              </div>
               {isClicked ? (
                 <div>
                   <h2 onClick={linkClickHandler}>- Link</h2>
                   <Link href={db.link}>
                     <Image
-                      src="/images/github.png"
+                      src="/images/logo/github.png"
                       alt="github"
                       width={50}
                       height={50}
@@ -78,19 +90,22 @@ const PostContents: React.FC<PagePropsAddPos> = (props) => {
                 </div>
               ) : (
                 <div onClick={linkClickHandler}>
-                  <h2>+ Link</h2>
+                  <h2 className={nanum.className}>+ Link</h2>
                 </div>
               )}
             </div>
             <div className={classes.header_contents}>
               <div className={classes.header_contents_p}>
-                <p>{db.description}</p>
+                <p className={noto.className}>{db.description}</p>
               </div>
             </div>
           </div>
         </header>
         <article className={classes.article}>
-          <ReactMarkdown components={customRenderersDB}>
+          <ReactMarkdown
+            components={customRenderersDB}
+            className={noto.className}
+          >
             {post.content}
           </ReactMarkdown>
         </article>

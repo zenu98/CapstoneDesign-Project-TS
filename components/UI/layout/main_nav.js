@@ -6,8 +6,9 @@ import { useRouter } from "next/router";
 
 const navigationItems = [
   { path: "/", text: "Home" },
+  { path: "/portfolio/portfolio-blog", text: "Seo" },
   { path: "/portfolio/pokemon-type-cal", text: "Pokemon" },
-  { path: "/portfolio/project-aa", text: "ProjectAA" },
+
   { path: "/portfolio/word-puzzle", text: "Puzzle" },
 ];
 
