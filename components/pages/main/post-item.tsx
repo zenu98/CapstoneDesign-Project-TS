@@ -16,7 +16,7 @@ const PostItem: React.FC<PageProps> = (props) => {
     <li className={classes.post}>
       <Link href={linkPath}>
         <div className={classes.image}>
-          <Image src={imagePath} alt={title} width={1000} height={400} />
+          <Image src={imagePath} alt={title} width={1920} height={1080} />
         </div>
         <div className={classes.content}>
           <h3>{title}</h3>
