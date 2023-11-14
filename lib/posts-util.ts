@@ -27,10 +27,10 @@ export function getPostData(postIdentifier: string): PostData {
 
 let client: MongoClient;
 const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.hgiisqy.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
-let allData: { data: AllData; timestamp: number } = null;
-const cacheTimeout = 5 * 60 * 1000;
+let allData: { data: AllData } = null;
+
 export async function getAllDB(): Promise<AllData> {
-  if (allData && Date.now() - allData.timestamp < cacheTimeout) {
+  if (allData) {
     return allData.data;
   }
 
@@ -53,7 +53,6 @@ export async function getAllDB(): Promise<AllData> {
   }));
   allData = {
     data: postArray,
-    timestamp: Date.now(),
   };
 
   client.close();
