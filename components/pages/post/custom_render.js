@@ -1,9 +1,9 @@
 import Image from "next/image";
 import classes from "./post_content.module.scss";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-
+import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
+SyntaxHighlighter.registerLanguage("jsx", jsx);
 const customRenderers = (db) => {
   return {
     p(paragraph) {
@@ -53,10 +53,8 @@ const customRenderers = (db) => {
       return <p>{paragraph.children}</p>;
     },
     code(code) {
-      const { className } = code;
-      const language = className.split("-")[1]; // language-js에서 js부분을 추출하는 부분
       return (
-        <SyntaxHighlighter style={atomDark} language={language}>
+        <SyntaxHighlighter style={atomDark} language="jsx">
           {code.children}
         </SyntaxHighlighter>
       );

@@ -1,5 +1,10 @@
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
-
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+  openAnalyzer: true,
+});
+const nextconfig = {};
+module.exports = withBundleAnalyzer(nextconfig);
 module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {

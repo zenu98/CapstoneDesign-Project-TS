@@ -34,7 +34,7 @@ React-Markdown을 통해 마크다운으로부터 이미지와 코드를 렌더�
 
 ![Next-blog-contact](next-blog-contact.png)
 
-```js
+```jsx
 import { MongoClient } from "mongodb";
 
 async function handler(req, res) {
