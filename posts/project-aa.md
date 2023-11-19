@@ -81,7 +81,6 @@ React로 구현한 웹페이지
   로그인이 성공적으로 이루어졌다면 다시 메인페이지로 redirect 되고 로그인 UI가 변경되어집니다.
 
   ![Project-AA-Login](project-aa-login.png)
-  ![Project-AA-Login-UI](project-aa-loginui.png)
 
 - ### 아쉬운점
   졸업 전 협업 경험을 쌓고 싶어 3명의 백엔드 개발자들과 같이 진행한 프로젝트 였지만,  
