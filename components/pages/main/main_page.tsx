@@ -20,11 +20,11 @@ const MainPage: React.FC<PageProps> = (props) => {
         <div className={classes.logo_container}>
           <div className={classes.logo_contents}>
             <Image
-              width={300}
-              height={500}
+              fill
               src={`/images/logo/logo.jpg`}
               className={`${classes.logo_image} `}
               alt="logo"
+              priority={true}
             />
             <span>Seo</span>
             <span>/</span>
